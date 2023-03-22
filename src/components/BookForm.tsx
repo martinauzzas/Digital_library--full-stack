@@ -37,7 +37,7 @@ const BookForm = ( props: BookFormProps ) => {
     if (props.isbn && props.isbn.length > 0 ) {
       server_calls.update(props.isbn[0], data)
       console.log(`Updated: ${ data.name } ${ props.isbn }`) //CHANGED {data} to {data.name}
-      setTimeout(() => { window.location.reload()}, 10000);
+      setTimeout(() => { window.location.reload()}, 500);
       event.target.reset()
 
     } else {
@@ -50,7 +50,7 @@ const BookForm = ( props: BookFormProps ) => {
       dispatch( chooseYear(data.year));
 
       server_calls.create(store.getState())
-      setTimeout(() => {window.location.reload()}, 10000);
+      setTimeout(() => {window.location.reload()}, 500);
     }
 }
 
@@ -59,27 +59,27 @@ const BookForm = ( props: BookFormProps ) => {
         <form onSubmit={ handleSubmit(onSubmit) }>
           <div>
             <label htmlFor="isbn">Book ISBN</label>
-            <Input {...register('isbn') } name='ISBN' placeholder= "Book ISBN" />
+            <Input {...register('isbn') } name='isbn' placeholder= "Book ISBN" />
           </div>
           <div>
             <label htmlFor="title">Book Title</label>
-            <Input {...register('title') } name='Book Title' placeholder= "Book Title" />
+            <Input {...register('title') } name='title' placeholder= "Book Title" />
           </div>
           <div>
             <label htmlFor="author">Book Author</label>
-            <Input {...register('author') } name='Author' placeholder= "Author" />
+            <Input {...register('author') } name='author' placeholder= "Author" />
           </div>
           <div>
             <label htmlFor="length">Book Length</label>
-            <Input {...register('length') } name='Length' placeholder= "Length" />
+            <Input {...register('length') } name='length' placeholder= "Length" />
           </div>
           <div>
             <label htmlFor="genre">Book Genre</label>
-            <Input {...register('genre') } name='Genre' placeholder= "Genre" />
+            <Input {...register('genre') } name='genre' placeholder= "Genre" />
           </div>
           <div>
             <label htmlFor="year">Book Year</label>
-            <Input {...register('year') } name='Year' placeholder= "Year" />
+            <Input {...register('year') } name='year' placeholder= "Year" />
           </div>
           <div className="flex p-1">
             <button

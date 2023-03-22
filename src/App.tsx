@@ -9,6 +9,13 @@ import { store } from './redux/slices/store';
 
 import AuthChecker from './auth/AuthChecker';
 
+// import configureProxy from './setupProxy';
+
+// const app = App();
+
+// configureProxy(app);
+
+
 // Created the routes ('./config/routes) in a variable so we can then map over them with JS in our function App
 
 
